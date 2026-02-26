@@ -27,21 +27,22 @@
 
         <div id="filter">
             <h2>Projects</h2>
-            <form id="search-form">
+            <form id="search-form" action="" autocomplete="off">
                 <input type="text" id="search-bar" placeholder="Search For Project"/>
 
                 <h3>Filter Tags:</h3>
+                <input type="text" id="tag-search" name="tag" placeholder="Search by tag"/>
 
                 <!--later will ask database for list of tags-->
                 <select name="dropdown-tags" id="dropdown-tags"> 
                     <option value="C">C</option>
                     <option value="Java">Java</option>
                     <option value="SQL">SQL</option>
-                    <option value="SQL">C#</option>
-                    <option value="SQL">Python</option>
-                    <option value="SQL">.Net</option>
-                    <option value="SQL">Typescript</option>
-                    <option value="SQL">Javascript</option>
+                    <option value="C#">C#</option>
+                    <option value="Python">Python</option>
+                    <option value=".Net">.Net</option>
+                    <option value="Typescript">Typescript</option>
+                    <option value="Javascript">Javascript</option>
                 </select>
                 <!-- later will need to implement adding removing tags to the form after selecting-->
                 <div id="selectedTags"></div>
