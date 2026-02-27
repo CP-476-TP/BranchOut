@@ -15,4 +15,6 @@ document.getElementById("register-form").addEventListener("submit", function (e)
     };
 
     console.log("User Data:", userData);
+
+    window.location.href = "main-page.html";
 });

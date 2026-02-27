@@ -15,4 +15,6 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
     };
 
     console.log("Login data:", loginData);
+
+    window.location.href = "main-page.html";
 });
