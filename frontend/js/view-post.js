@@ -7,10 +7,12 @@ const titleEl = document.getElementById("project-title");
 const descEl = document.getElementById("project-description");
 const tagsEl = document.getElementById("project-tags");
 const linksEl = document.getElementById("project-links");
+const editLink = document.getElementById("edit-link");
 
 if (project) {
     titleEl.textContent = project.ProjectName;
     descEl.textContent = project.Description;
+    editLink.href = "edit-post.html?id=" + project.ProjectID;
 
     project.Tags.forEach(tagObj => {
         const span = document.createElement("span");
