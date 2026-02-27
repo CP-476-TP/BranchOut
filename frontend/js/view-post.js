@@ -9,7 +9,7 @@ const tagsEl = document.getElementById("project-tags");
 const linksEl = document.getElementById("project-links");
 
 if (project) {
-    titleEl.textContent = "Project " + project.ProjectID;
+    titleEl.textContent = project.ProjectName;
     descEl.textContent = project.Description;
 
     project.Tags.forEach(tagObj => {
