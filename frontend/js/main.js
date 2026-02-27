@@ -100,5 +100,5 @@ function autocomplete(input, arr){
                 a.appendChild(b);
             }
         }
-    }
+    })
 };
