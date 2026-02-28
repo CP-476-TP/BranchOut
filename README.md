@@ -21,10 +21,10 @@ npm run start
 
 ```
 
+## Planned Technologies
 Currently there is no database implementation, the planned schema is located at BranchOut/backend/schema.sql and will be used with PostgreSQL@18 in the future. 
 
-## Planned Technologies
-The finished product will use 
+The finished product will use BetterAuth for authentication and Docker containers for the backend.
 
 ## Deliverable 2 Contribtuons
 - Kevin: main page, post-project page, edit-post page.
