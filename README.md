@@ -27,6 +27,6 @@ Currently there is no database implementation, the planned schema is located at 
 The finished product will use 
 
 ## Deliverable 2 Contribtuons
-Kevin: main page, post-project page, edit-post page.
-Aaron: register page, login page, view-post page
-Omar: Back-end setup, SQL tables, Database-design package
+- Kevin: main page, post-project page, edit-post page.
+- Aaron: register page, login page, view-post page
+- Omar: Back-end setup, SQL tables, Database-design package
