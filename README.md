@@ -1,30 +1,26 @@
 # BranchOut
 A platform for programmers of all skill levels to create or collaborate on new or existing open source projects!
-
-## How to setup locally as of Milestone #2.
  
 ### Frontend
 Frontend is comprised of plain html, css, and javascript so no dependencies are required, open main-page.html in any web browser.
 
 ### Backend
-Dependencies:
+## Prerequisites
+- Docker
+- Docker Compose
+- node.js
+- npm
 
-- [node.js](https://nodejs.org/en/download)
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+## Installation & Setup
 
-Run the following in the root folder of BranchOut:
-```bash
+Note: I know its bad security practice to upload the environment variables into the compose.yaml but for simplicities sake in marking and deployment I kept it that way, in a real scenario I would have not done this.
 
-cd ./backend
-npm install
-npm run start
+How to set up the backend:
+- Make sure you are within the cloned BranchOut repo directory.
+- cd ./backend
+- docker-compose up --build
 
-```
-
-## Planned Technologies
-Currently there is no database implementation, the planned schema is located at BranchOut/backend/schema.sql and will be used with PostgreSQL@18 in the future. 
-
-The finished product will use BetterAuth for authentication and Docker containers for the backend.
+Now running the docker container will run the backend and database, wahoo!
 
 ## Deliverable 2 Contribtuons
 - Kevin: main page, post-project page, edit-post page.
