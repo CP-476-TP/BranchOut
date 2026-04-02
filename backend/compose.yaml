@@ -1,0 +1,34 @@
+# docker-compose.yml
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: branchout_db
+    environment:
+      POSTGRES_USER: branch_out
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: BranchOut
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Automatically run your schema file on startup
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  backend:
+    build: 
+      context: ./
+    container_name: branchout_backend
+    environment:
+      - DB_USER=branch_out
+      - DB_PASSWORD=password
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=BranchOut
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
