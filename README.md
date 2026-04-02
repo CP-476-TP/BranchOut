@@ -5,13 +5,14 @@ A platform for programmers of all skill levels to create or collaborate on new o
 Frontend is comprised of plain html, css, and javascript so no dependencies are required, open main-page.html in any web browser.
 
 ### Backend
-## Prerequisites
+
+### Prerequisites
 - Docker
 - Docker Compose
 - node.js
 - npm
 
-## Installation & Setup
+### Installation & Setup
 
 Note: I know its bad security practice to upload the environment variables into the compose.yaml but for simplicities sake in marking and deployment I kept it that way, in a real scenario I would have not done this.
 
