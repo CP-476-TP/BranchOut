@@ -3,14 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors');   // ADDED
+var cors = require('cors');
 
 var projectRouter = require('./routes/project');
 var tagRouter = require('./routes/tag');
 var userRouter = require('./routes/user');
 
 var app = express();
-// 🔥 THIS MUST BE HERE
+
 app.use(cors());
 app.options('*', cors());
 
