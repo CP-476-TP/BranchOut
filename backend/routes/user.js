@@ -67,23 +67,46 @@ router.post('/login', async function(req, res, next) {
 });
 
 /* DELETE /user/delete */
-router.delete('/delete', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.delete('/delete', async function(req, res, next) {
+  try {
+    const { id } = req.body;
+
+    if (!id) {
+      return res.status(400).json({ error: 'User ID is required for deletion' });
+    }
+
+    const result = await db.query('DELETE FROM Users WHERE ID = $1 RETURNING id', [id]);
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json({ message: 'User deleted successfully', deletedId: result.rows[0].id });
+  } catch (err) {
+    console.error("Database error during deletion:", err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 /* GET /user/:id */
-router.get('/:id', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/:id', async function(req, res, next) {
+  try {
+    const { id } = req.params;
 
-/* GET /user/settings */
-router.get('/settings', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+    const result = await db.query(
+      'SELECT id, github_link, time_created, email FROM Users WHERE ID = $1', 
+      [id]
+    );
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
 
-/* POST /user/settings */
-router.post('/settings', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    res.json({ user: result.rows[0] });
+  } catch (err) {
+    console.error("Database error while fetching user:", err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 module.exports = router;
